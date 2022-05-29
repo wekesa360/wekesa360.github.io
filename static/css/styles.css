@@ -78,11 +78,11 @@ div .about-container{
 @media screen and (max-width: 1060px) {
     #primary { width:67%; }
     #secondary { width:30%; margin-left:3%;} 
-    #home {padding-top:45%;} 
+    #home {padding-top:50%;} 
     .bg-collapse {
         background-color:#343a40;
     }
-    #contact{padding-top:80px;}
+    #contact{padding-to: 95px;}
     #about {padding-top: 25%;}
 }
 
