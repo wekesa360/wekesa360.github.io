@@ -5,14 +5,14 @@ body {
     /* overflow: hidden; */
     font-family: 'Cutive Mono', monospace !important;
     background: url("../images/nairobi.jpg"); 
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative; 
 }
 
 .layer {
     background-color: rgba(53, 53, 53, 0.8) !important;
-    background-size: 100% 100%;
+    background-size: cover;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -92,6 +92,9 @@ body {
     font-size: 30px !important;
 }
 
+.text-uppercase {
+    font-size: 16px;
+}
   
   @media screen and (max-width: 600px) {
     .nav-links {
@@ -109,4 +112,8 @@ body {
 
 .interest {
     font-size: 30px !important;
+}
+
+.text-uppercase {
+    font-size: 16px;
 }
