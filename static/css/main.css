@@ -10,6 +10,11 @@ body {
     position: relative; 
 }
 
+.to-front{
+    z-index: 2;
+}
+
+
 .layer {
     background-color: rgba(53, 53, 53, 0.8) !important;
     background-size: cover;
