@@ -1,60 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="./static/css/main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <title>Michael Wekesa</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Abraham Wekesa - Innovative Software Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1A202C;
+            --secondary-color: #4FD1C5;
+            --accent-color: #F6AD55;
+            --background-color: #F7FAFC;
+            --text-color: #2D3748;
+        }
 
-  <body>
-    <div class="row layer">
-      <div class="col-lg-4 col-md-12 col-sm-12 m-0 bg-dark">
-        <div class="navbar navbar-expand-lg">
-          <button class="navbar-toggler m-3 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-        </button>
-          <div class="d-flex flex-column min-vh-80 min-vw-100 nav-links mt-0">
-            <div  class="d-flex flex-grow-1 align-items-center">
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class=" m-lg-3 me-auto">
-                <li class="mb-5"><img  width="345" src="./static/images/light.png" alt="logo" srcset=""></li>
-                <li class="p-lg-4 p-md-2 p-sm-2 nav-item"><a target="_blank" class="p-3 links text-white text-decoration-none text-uppercase" data-bs-target=".navbar-collapse.show" href="https://dev.to/wekesa360">Blog</a> </li>
-                <li class="p-lg-4 p-md-2 p-sm-2 nav-item"><a target="_blank" class="p-3 links text-white text-decoration-none text-uppercase" data-bs-target=".navbar-collapse.show" href="https://github.com/wekesa360">Github</a> </li>
-                <li class="p-lg-4 p-md-2 p-sm-2 nav-item"><a target="_blank" class="p-3 links text-white text-decoration-none text-uppercase" data-bs-target=".navbar-collapse.show" href="https://speakerdeck.com/wekesa360">Speaker Deck</a> </li>
-                <li class="p-lg-4 p-md-2 p-sm-2 nav-item"><a target="_blank" class="p-3 links text-white text-decoration-none text-uppercase" data-bs-target=".navbar-collapse.show" href="#">Projects Portfolio</a> </li>
-                <li class="p-lg-4 p-md-2 p-sm-2 nav-item"><a target="_blank" class="p-3 links text-white text-decoration-none text-uppercase" data-bs-target=".navbar-collapse.show" href="https://developers.google.com/profile/u/michaelwekesa">Google Developer Profile</a> </li>
-              </ul>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1A202C, #2D3748);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-weight: 700;
+            font-size: 4rem;
+            color: #F7FAFC;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1.5s ease;
+        }
+
+        header .tagline {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: #CBD5E0;
+            animation: fadeInUp 2s ease;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            background: rgba(26, 32, 44, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 1rem 2rem;
+            margin: 1rem auto;
+            max-width: 80%;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
+            position: relative;
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 1rem auto;
+        }
+
+        .skills-list, .experience-list, .education-list, .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-item, .experience-item, .education-item, .project-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover, .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-item h3, .education-item h3, .project-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2D3748, #1A202C);
+            color: #CBD5E0;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: #CBD5E0;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: radial-gradient(circle, #4FD1C5 30%, #1A202C);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        #terminal-playground {
+            background-color: #282a36;
+            color: #f8f8f2;
+            font-family: 'Fira Code', monospace;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 0 20px rgba(68, 71, 90, 0.3);
+        }
+
+        #terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        #terminal-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        #terminal-buttons {
+            display: flex;
+        }
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+
+        #close-button { background-color: #ff5555; }
+        #minimize-button { background-color: #ffb86c; }
+        #maximize-button { background-color: #50fa7b; }
+
+        #terminal-output {
+            height: 350px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #282a36;
+            border-radius: 5px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        #terminal-input {
+            display: flex;
+            align-items: center;
+            background-color: #282a36;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        #terminal-prompt {
+            color: #50fa7b;
+            margin-right: 10px;
+        }
+
+        #command-input {
+            flex-grow: 1;
+            background-color: transparent;
+            border: none;
+            color: #f8f8f2;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+        }
+
+        #command-input:focus {
+            outline: none;
+        }
+
+        .command-line {
+            margin-bottom: 5px;
+        }
+
+        .error-message {
+            color: #ff5555;
+        }
+
+        .success-message {
+            color: #50fa7b;
+        }
+
+        .info-message {
+            color: #8be9fd;
+        }
+
+        /* Scrollbar Styles */
+        #terminal-output::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #terminal-output::-webkit-scrollbar-track {
+            background: #44475a;
+        }
+
+        #terminal-output::-webkit-scrollbar-thumb {
+            background-color: #6272a4;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                max-width: 90%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Michael Abraham Wekesa</h1>
+        <p class="tagline">Innovative Software Developer | Problem Solver | Tech Enthusiast</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill-item">Django | Flask | Python | FastAPI</div>
+                <div class="skill-item">SQL | Javascript | Laravel | PostgreSQL</div>
+                <div class="skill-item">NoSQL | HTML5 | Git | Firebase</div>
+                <div class="skill-item">Microservices | Backend Development</div>
+                <div class="skill-item">Teamwork | Effective Communication</div>
+                <div class="skill-item">Adaptability | Continuous Learning</div>
             </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <h3>Software Engineering Fellow</h3>
+                    <p>Major League Hacking (MLH) - Meta Project</p>
+                    <p>09/2023 - 12/2023</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Software Developer</h3>
+                    <p>EVIS - Kabarak</p>
+                    <p>06/2022 - 03/2024</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Lead</h3>
+                    <p>Google Developer Student Clubs Kabarak University</p>
+                    <p>08/2022 - 08/2023</p>
+                </div>
             </div>
-          </div>
-          </div>
-            <div class="px-5 fixed-bottom">
-              <span class="p-lg-2 p-md-1 p-sm-1"><a target="_blank" class="text-decoration-none text-white" href="mailto:wekesa360@outlook.com"><b class="fw-light"> wekesa360@outlook.com</b></a></span><br>
-              <span class="p-lg-2 p-md-1 p-sm-1"><a target="_blank" class="text-decoration-none text-white" href="mailto:wekesa360@outlook.com"><b class="fw-lighter"> COPYRIGHT © 2023</b></a></span>
-              
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-list">
+                <div class="education-item">
+                    <h3>Bsc. Computer Science</h3>
+                    <p>Kabarak University</p>
+                    <p>Expected graduation: 2024</p>
+                </div>
+                <div class="education-item">
+                    <h3>Software Engineering</h3>
+                    <p>ALX - Holberton School</p>
+                </div>
             </div>
-          </div>
-      <div class="col-lg-8 col-md-12 col-sm-12 to-front">
-        <div class="d-flex flex-column min-vh-100 ">
-          <div  class="d-flex flex-grow-1 align-items-center mx-auto">
-            <div class="text-center">
-              <p class="text-white sde ">Software Developer</p>  
-              <p class="text-white interest">Adventure 🤠 + Code 💻 + Music 🎸</p>   
-              <div class="socials p-5 my-auto">
-                <span class="p-lg-2 p-md-1 p-sm-1"><a target="_blank" class="text-decoration-none text-white" href="https://twitter.com/wekesa360"><i class="fa-brands fa-twitter fa-2x"></i></a></span>
-                <span class="p-lg-2 p-md-1 p-sm-1"><a target="_blank" class="text-decoration-none text-white" href="https://www.instagram.com/_michaelwekesa/"><i class="fa-brands fa-instagram fa-2x"></i></a></pan>
-                <span class="p-lg-3 p-md-2 p-sm-2"><a target="_blank" class="text-decoration-none text-white" href="https://www.linkedin.com/in/wekesa360/"><i class="fa-brands fa-linkedin-in fa-2x"></i></a></span>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-list">
+                <div class="project-item">
+                    <h3>PlayIt - Spotify mp3 Playlist Downloader</h3>
+                    <p>Download Spotify playlists in zipped folders, songs formats as mp3, using Spotify API</p>
+                </div>
+                <div class="project-item">
+                    <h3>Event Management System Backend</h3>
+                    <p>A backend service with APIs for managing events and user accounts</p>
+                </div>
+                <div class="project-item">
+                    <h3>Whatsapp Chatbot</h3>
+                    <p>A Whatsapp chatbot for CS free learning resources, built on Sarufi, Flask, and Twilio integration</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="terminal-playground">
+          <div id="terminal-header">
+              <div id="terminal-buttons">
+                  <div class="terminal-button" id="close-button"></div>
+                  <div class="terminal-button" id="minimize-button"></div>
+                  <div class="terminal-button" id="maximize-button"></div>
               </div>
-            </div>
-            </div>       
-      </div>
-    </div>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/415119f36a.js" crossorigin="anonymous"></script>
-  </body>
+              <div id="terminal-title">michael@wekesa-terminal: ~/playground</div>
+          </div>
+          <div id="terminal-output"></div>
+          <div id="terminal-input">
+              <span id="terminal-prompt">$</span>
+              <input type="text" id="command-input" autofocus>
+          </div>
+      </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Michael Abraham Wekesa. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <div class="scroll-to-top">↑</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a');
+            const scrollToTop = document.querySelector('.scroll-to-top');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollToTop.classList.add('visible');
+                } else {
+                    scrollToTop.classList.remove('visible');
+                }
+            });
+
+            scrollToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // Add AOS attributes to elements
+            document.querySelectorAll('.skill-item, .experience-item, .education-item, .project-item').forEach((item, index) => {
+                item.setAttribute('data-aos', 'fade-up');
+                item.setAttribute('data-aos-delay', index * 100);
+            });
+
+            const terminalOutput = document.getElementById('terminal-output');
+            const commandInput = document.getElementById('command-input');
+
+            const commands = {
+                help: 'Display available commands',
+                about: 'Display a brief introduction about Michael',
+                skills: 'List Michael\'s technical skills',
+                experience: 'Show Michael\'s work experience',
+                education: 'Display Michael\'s educational background',
+                projects: 'List Michael\'s notable projects',
+                contact: 'Show Michael\'s contact information',
+                clear: 'Clear the terminal screen',
+                echo: 'Repeat the given text',
+                date: 'Display current date and time',
+                whoami: 'Display current user',
+                ls: 'List directory contents',
+                pwd: 'Print working directory'
+            };
+
+            const commandResponses = {
+                about: "Michael Abraham Wekesa is an innovative software developer with a passion for problem-solving and continuous learning. He specializes in backend development and has experience with various programming languages and frameworks.",
+                skills: "Technical skills include:\n- Django, Flask, Python, FastAPI\n- SQL, JavaScript, Laravel, PostgreSQL\n- NoSQL, HTML5, Git, Firebase\n- Microservices, Backend Development",
+                experience: "Work experience:\n1. Software Engineering Fellow at Major League Hacking (MLH) - Meta Project (09/2023 - 12/2023)\n2. Software Developer at EVIS - Kabarak (06/2022 - 03/2024)\n3. Lead at Google Developer Student Clubs Kabarak University (08/2022 - 08/2023)",
+                education: "Educational background:\n1. Bsc. Computer Science at Kabarak University (Expected graduation: 2024)\n2. Software Engineering at ALX - Holberton School",
+                projects: "Notable projects:\n1. PlayIt - Spotify mp3 Playlist Downloader\n2. Event Management System Backend\n3. Whatsapp Chatbot for CS free learning resources",
+                contact: "Contact Information:\n- Email: wekesa360@outlook.com\n- LinkedIn: [Your LinkedIn URL]\n- GitHub: [Your GitHub URL]",
+                whoami: "guest",
+                pwd: "/home/michael/playground",
+                ls: "about.txt  skills.md  experience.log  education.pdf  projects.js  contact.vcf"
+            };
+
+            function displayOutput(output, className = '') {
+                const line = document.createElement('div');
+                line.classList.add('command-line');
+                if (className) {
+                    line.classList.add(className);
+                }
+                line.innerHTML = output;
+                terminalOutput.appendChild(line);
+                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            }
+
+            function processCommand(command) {
+                displayOutput(`<span class="info-message">$</span> ${command}`);
+                
+                const [cmd, ...args] = command.toLowerCase().trim().split(' ');
+                
+                switch (cmd) {
+                    case 'help':
+                        displayOutput('Available commands:');
+                        for (const [key, value] of Object.entries(commands)) {
+                            displayOutput(`  <span class="success-message">${key}</span>: ${value}`);
+                        }
+                        break;
+                    case 'clear':
+                        terminalOutput.innerHTML = '';
+                        break;
+                    case 'echo':
+                        displayOutput(args.join(' '));
+                        break;
+                    case 'date':
+                        displayOutput(new Date().toString());
+                        break;
+                    default:
+                        if (commandResponses.hasOwnProperty(cmd)) {
+                            displayOutput(commandResponses[cmd]);
+                        } else {
+                            displayOutput(`Command not found: ${cmd}. Type 'help' for available commands.`, 'error-message');
+                        }
+                }
+            }
+
+            commandInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const command = this.value;
+                    this.value = '';
+                    processCommand(command);
+                }
+            });
+
+            // Initial message
+            displayOutput('Welcome to Michael\'s Terminal Playground!', 'success-message');
+            displayOutput('Type "help" to see available commands.', 'info-message');
+        });
+    </script>
+</body>
 </html>
